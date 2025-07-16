@@ -1,0 +1,366 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #696969;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Header */
+.about-header {
+    background-image: url('image/SAMJ.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 60px 0;
+}
+
+.about-header .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+
+/* Content Box Styling */
+.intro {
+    padding: 50px;
+    text-align: center;
+    background-color: #ffffff;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    color: #696969;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #696969;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.inquiry-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Inquiry */
+.inquiry-button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.inquiry-button:hover {
+    background-color: #0056b3;
+}
+
+.btn:hover {
+    background-color: #0066cc;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+/* Novel Bahasa Melayu */
+.novel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.flip-container {
+    perspective: 1000px;
+}
+
+.flip-card {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #f8f8f8;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/* SlideShow */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.fade {
+    animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Social Media */
+.social-media {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007BFF; /* Blue hover */
+}
+
+/* Event Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Event Card */
+.event-card {
+  background-color: #ffffff;
+  border-left: 5px solid #696969;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.event-card p {
+  margin: 10px 0;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Resource Grid */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.resource-card {
+  background-color: #ffffff;
+  border-left: 6px solid #696969;
+  border-radius: 10px;
+  padding: 25px 20px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.resource-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #444;
+}
+
+.resource-card p {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+.resource-card .btn {
+  display: inline-block;
+  background-color: #696969;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resource-card .btn:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    width: 250px;
+}
+
+/* searchbar */
+.search-bar-global {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search-bar-global input {
+  padding: 10px;
+  width: 280px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+/* Social Media Icons */
+.social-icons img {
+    width: 30px;
+    margin: 0 5px;
+}

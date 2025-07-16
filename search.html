@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="about-header">
+    <div class="overlay">
+      <h1>🔍 Search Results</h1>
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+  </header>
+
+  <section class="intro">
+    <ul id="resultsList"></ul>
+    <p id="noResults" style="color: red; font-weight: bold; text-align: center;"></p>
+  </section>
+
+  <script>
+    const searchParams = new URLSearchParams(window.location.search);
+    const query = searchParams.get("q")?.toLowerCase() || "";
+
+    const pages = [
+      { title: "Home", url: "index.html", content: "SAM Jeram School Library digital resources and tools for learning" },
+      { title: "About", url: "about.html", content: "Our mission is to support students and educators with resources" },
+      { title: "Resources", url: "resources.html", content: "Fiction, Non-fiction, Comics, Reference books, Guidelines" },
+      { title: "Contact", url: "contact.html", content: "Contact information including phone, email, location" },
+      { title: "Upcoming Events", url: "upcomingevent.html", content: "Book fair, storytelling, reading challenge, school events" },
+      { title: "About Me", url: "aboutme.html", content: "Information about the librarian or creator of the website" }
+    ];
+
+    const resultsList = document.getElementById("resultsList");
+    const noResults = document.getElementById("noResults");
+    let found = false;
+
+    pages.forEach(page => {
+      if (page.content.toLowerCase().includes(query)) {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${page.url}" target="_blank"><strong>${page.title}</strong> — ${page.content}</a>`;
+        resultsList.appendChild(li);
+        found = true;
+      }
+    });
+
+    if (!found) {
+      noResults.textContent = "No results found.";
+    }
+  </script>
+</body>
+</html>

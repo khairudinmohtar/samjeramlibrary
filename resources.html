@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resources - School Library</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="about-header">
+    <div class="overlay">
+      <h1>📚 Library Resources</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="upcomingevent.html">Upcoming Events</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar-global">
+        <form action="search.html" method="GET">
+          <input type="text" name="q" placeholder="Search the site..." required />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro search-target">
+    <h2>Explore Our Digital Collection</h2>
+    <p>Find novels, fiction, reference materials, and more curated just for you.</p>
+
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterResources()">
+      <option value="all">All Categories</option>
+      <option value="novel">Novel Bahasa Melayu</option>
+      <option value="fiction">Fiction</option>
+      <option value="nonfiction">Non-Fiction</option>
+      <option value="reference">Reference</option>
+      <option value="magazine">Comics & Magazines</option>
+      <option value="guidelines">Borrowing Guidelines</option>
+    </select>
+  </section>
+
+  <section class="resource-grid">
+    <div class="resource-card search-target" data-category="novel">
+      <h3>📖 Novel Bahasa Melayu</h3>
+      <p>Enjoy local stories in Bahasa Melayu.</p>
+      <a href="novelbahasamelayu.html" target="_blank" class="btn">View List</a>
+    </div>
+
+    <div class="resource-card search-target" data-category="fiction">
+      <h3>✨ Fiction</h3>
+      <p>Explore magical tales and adventures.</p>
+      <a href="https://www.sparknotes.com/lit/harrypotter/summary/" target="_blank" class="btn">Harry Potter Summary</a>
+    </div>
+
+    <div class="resource-card search-target" data-category="nonfiction">
+      <h3>📚 Non‑Fiction</h3>
+      <p>Expand your mind with real-world knowledge.</p>
+      <a href="https://www.fisica.net/relatividade/stephen_hawking_a_brief_history_of_time.pdf" target="_blank" class="btn">Stephen Hawking PDF</a>
+    </div>
+
+    <div class="resource-card search-target" data-category="reference">
+      <h3>🔍 Reference</h3>
+      <p>Dictionaries, maps, and encyclopedias.</p>
+      <a href="https://www.oxfordreference.com/" target="_blank" class="btn">Oxford Dictionary</a>
+    </div>
+
+    <div class="resource-card search-target" data-category="magazine">
+      <h3>📰 Comics & Magazines</h3>
+      <p>Interactive and fun resources for all ages.</p>
+      <a href="https://kids.nationalgeographic.com/" target="_blank" class="btn">NatGeo Kids</a>
+    </div>
+	
+	 <div class="resource-card search-target" data-category="fiction">
+    <h3>📘 English Novels</h3>
+    <p>Explore best-selling English literature and teen fiction.</p>
+    <a href="https://www.goodreads.com/list/show/2681.Best_Young_Adult_Books" target="_blank" class="btn">Goodreads List</a>
+  </div>
+
+  <div class="resource-card search-target" data-category="nonfiction">
+    <h3>📗 Science Resources</h3>
+    <p>Science articles, experiments, and discovery tools for young minds.</p>
+    <a href="https://www.sciencekids.co.nz/" target="_blank" class="btn">Science for Kids</a>
+  </div>
+
+  <div class="resource-card search-target" data-category="nonfiction">
+    <h3>📙 History Archives</h3>
+    <p>Dive into world history, Malaysian independence, and more.</p>
+    <a href="https://www.historyforkids.net/" target="_blank" class="btn">Explore History</a>
+  </div>
+
+  <div class="resource-card search-target" data-category="reference">
+    <h3>📕 Islamic Books</h3>
+    <p>Islamic studies, doa books, and Al-Quran translations.</p>
+    <a href="https://quran.com/" target="_blank" class="btn">Visit Quran.com</a>
+  </div>
+
+  <div class="resource-card search-target" data-category="nonfiction">
+    <h3>📒 Biographies</h3>
+    <p>Learn about inspiring figures like Tun Dr Mahathir, Nelson Mandela & more.</p>
+    <a href="https://www.ducksters.com/biography/" target="_blank" class="btn">Read Biographies</a>
+  </div>
+
+  <div class="resource-card search-target" data-category="reference">
+    <h3>📓 Math Practice</h3>
+    <p>Improve your math skills with worksheets, games, and challenges.</p>
+    <a href="https://www.mathsisfun.com/" target="_blank" class="btn">Math Is Fun</a>
+  </div>
+
+    <div class="resource-card search-target" data-category="guidelines">
+      <h3>📌 Borrowing Guidelines</h3>
+      <p>Learn how to borrow books from our library.</p>
+      <a href="file/borrowing-instructions.pdf" target="_blank" class="btn">View PDF Guide</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SAM Jeram School Library. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript: Dropdown Filter -->
+  <script>
+    function filterResources() {
+      const selected = document.getElementById("categoryFilter").value;
+      const cards = document.querySelectorAll(".resource-card");
+
+      cards.forEach(card => {
+        const category = card.getAttribute("data-category");
+        card.style.display = (selected === "all" || category === selected) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
