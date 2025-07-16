@@ -39,7 +39,7 @@ nav ul li a:hover {
 
 /* Header */
 .about-header {
-    background-image: url('image/SAMJ.jpg');
+    background-image: url('SAMJ.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
