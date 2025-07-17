@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upcoming Events</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="about-header">
+    <div class="overlay">
+      <h1 class="search-target">📚 Upcoming Events</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="upcomingevent.html">Upcoming Events</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+        </ul>
+      </nav>
+
+      <div class="search-bar-global">
+  <form action="search.html" method="GET">
+    <input type="text" name="q" placeholder="Search the site..." required />
+    <button type="submit">Search</button>
+  </form>
+</div>
+    </div>
+  </header>
+
+  <section class="intro search-target">
+    <h2>Library Upcoming Events</h2>
+    <p>Don't miss our exciting activities and literacy programs happening this month!</p>
+
+    <label for="eventFilter">Filter by Category:</label>
+  <select id="eventFilter" onchange="filterEvents()">
+    <option value="all">All Events</option>
+    <option value="bookfair">📚 Book Fair</option>
+    <option value="storytelling">🎤 Storytelling Session</option>
+    <option value="reading">🏆 Reading Challenge</option>
+    <option value="workshop">🛠️ Workshop</option>
+    <option value="competition">🎯 Competition</option>
+    <option value="exhibition">🖼️ Exhibition</option>
+  </select>
+</section>
+
+  <section class="events-grid">
+    <div class="event-card search-target" data-category="bookfair">
+      <h3>📚 Book Fair</h3>
+      <p><strong>Date:</strong> July 15, 2025</p>
+      <p>Explore discounted books, new arrivals, and rare finds at our annual book fair.</p>
+    </div>
+
+    <div class="event-card search-target" data-category="storytelling">
+      <h3>🎤 Storytelling Session</h3>
+      <p><strong>Date:</strong> July 20, 2025</p>
+      <p>Join our guest storytellers for an imaginative and engaging reading experience.</p>
+    </div>
+
+    <div class="event-card search-target" data-category="reading">
+      <h3>🏆 Reading Challenge</h3>
+      <p><strong>Status:</strong> Ongoing</p>
+      <p>Participate in our monthly reading challenge and stand a chance to win prizes!</p>
+    </div>
+  
+	<div class="event-card search-target" data-category="workshop">
+    <h3>🛠️ Creative Writing Workshop</h3>
+    <p><strong>Date:</strong> August 5, 2025</p>
+    <p>Learn how to craft your own story from experienced writers.</p>
+	</div>
+
+	<div class="event-card search-target" data-category="competition">
+    <h3>🎯 Spelling Bee Competition</h3>
+    <p><strong>Date:</strong> August 12, 2025</p>
+    <p>Put your spelling skills to the test and win exciting rewards!</p>
+	</div>
+
+	<div class="event-card search-target" data-category="exhibition">
+    <h3>🖼️ Student Book Art Exhibition</h3>
+    <p><strong>Date:</strong> August 25–30, 2025</p>
+    <p>Browse unique book-themed art projects by our talented students.</p>
+	</div>
+
+	<div class="event-card search-target" data-category="workshop">
+    <h3>💻 Digital Literacy Workshop</h3>
+    <p><strong>Date:</strong> September 3, 2025</p>
+    <p>Improve your tech skills for research, browsing, and online safety.</p>
+	</div>
+
+	<div class="event-card search-target" data-category="competition">
+    <h3>📸 Library Poster Design Contest</h3>
+    <p><strong>Submission Deadline:</strong> September 15, 2025</p>
+    <p>Showcase your creativity and promote the love of reading!</p>
+  </div>
+	</section>
+
+  <footer class="search-target">
+    <p>&copy; 2025 SAM Jeram School Library. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function searchSite() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll(".search-target");
+      const noResults = document.getElementById("noResults");
+      let found = false;
+
+      items.forEach(item => {
+        const content = item.textContent.toLowerCase();
+        const match = content.includes(input);
+        item.style.display = match ? "block" : "none";
+        if (match) found = true;
+      });
+
+      if (noResults) {
+        noResults.style.display = found ? "none" : "block";
+      }
+    }
+
+    function filterEvents() {
+      const selected = document.getElementById("eventFilter").value;
+      const cards = document.querySelectorAll(".event-card");
+
+      cards.forEach(card => {
+        const category = card.getAttribute("data-category");
+        if (selected === "all" || category === selected) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

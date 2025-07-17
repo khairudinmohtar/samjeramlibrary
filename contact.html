@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - School Library</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="about-header">
+    <div class="overlay">
+      <h1>📚 Contact Us</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="upcomingevent.html">Upcoming Events</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search bar -->
+      <div class="search-bar-global">
+  <form action="search.html" method="GET">
+    <input type="text" name="q" placeholder="Search the site..." required />
+    <button type="submit">Search</button>
+  </form>
+</div>
+    </div>
+  </header>
+
+  <section class="intro search-target">
+    <h2>Get in Touch</h2>
+    <p>If you have any questions or need help, feel free to contact us.</p>
+    <p>Email: <a href="mailto:samj.bft3001@moe.edu.my">samj.bft3001@moe.edu.my</a></p>
+    <p>Phone: 03-3264 7396</p>
+    <p>Address: SAM Jeram School Library, Batu 20, 45800 Jeram, Selangor Darul Ehsan </p>
+  </section>
+
+  <div class="inquiry-button-container search-target">
+    <a href="https://forms.gle/MpDdmEsGA6GSgYgv9" target="_blank" class="inquiry-button">
+      Send an Enquiry/Feedback
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SAM Jeram School Library. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function searchSite() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll(".search-target");
+      const noResults = document.getElementById("noResults");
+      let found = false;
+
+      items.forEach(item => {
+        const content = item.textContent.toLowerCase();
+        const match = content.includes(input);
+        item.style.display = match ? "block" : "none";
+        if (match) found = true;
+      });
+
+      noResults.style.display = found ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
